@@ -1,0 +1,267 @@
+{
+  "name": "Indian home interior project (turnkey)",
+  "project_types": {
+    "apartment": "Apartment",
+    "villa": "Villa / bungalow",
+    "penthouse": "Penthouse",
+    "office": "Office",
+    "retail": "Retail / showroom",
+    "hospitality": "Hospitality"
+  },
+  "roles": {
+    "designer": "Designer",
+    "senior": "Senior designer / project lead"
+  },
+  "stages": [
+    {
+      "key": "brief",
+      "name": "Brief and measurement",
+      "days": 5,
+      "client_approval": true,
+      "approval_label": "Client signs off the brief",
+      "client_ask": "Sign off the brief",
+      "tasks": [
+        {
+          "title": "Kick-off call with the client",
+          "who": "designer",
+          "day": 0,
+          "required": true
+        },
+        {
+          "title": "Site visit and measurement",
+          "who": "designer",
+          "day": 2,
+          "required": true
+        },
+        {
+          "title": "Requirement form filled with the client",
+          "who": "designer",
+          "day": 3,
+          "required": true
+        },
+        {
+          "title": "Budget range confirmed with the client",
+          "who": "senior",
+          "day": 4,
+          "required": true
+        }
+      ]
+    },
+    {
+      "key": "concept",
+      "name": "Concept",
+      "days": 10,
+      "client_approval": true,
+      "approval_label": "Client approves the concept",
+      "client_ask": "Approve the concept",
+      "tasks": [
+        {
+          "title": "Mood board and references",
+          "who": "designer",
+          "day": 3,
+          "required": true
+        },
+        {
+          "title": "Space planning layout (2D)",
+          "who": "designer",
+          "day": 6,
+          "required": true
+        },
+        {
+          "title": "Internal review of the concept",
+          "who": "senior",
+          "day": 8,
+          "required": true
+        },
+        {
+          "title": "Concept presentation to the client",
+          "who": "designer",
+          "day": 9,
+          "required": true
+        }
+      ]
+    },
+    {
+      "key": "design",
+      "name": "Design development",
+      "days": 15,
+      "client_approval": true,
+      "approval_label": "Client freezes the design",
+      "client_ask": "Freeze the design",
+      "tasks": [
+        {
+          "title": "Detailed 2D drawings",
+          "who": "designer",
+          "day": 6,
+          "required": true
+        },
+        {
+          "title": "3D views of every room",
+          "who": "designer",
+          "day": 10,
+          "required": true
+        },
+        {
+          "title": "Materials and finishes selected",
+          "who": "designer",
+          "day": 11,
+          "required": true
+        },
+        {
+          "title": "Lighting and electrical layout",
+          "who": "designer",
+          "day": 12,
+          "required": true
+        },
+        {
+          "title": "Senior check of drawings",
+          "who": "senior",
+          "day": 14,
+          "required": true
+        }
+      ]
+    },
+    {
+      "key": "boq",
+      "name": "BOQ approval",
+      "days": 5,
+      "client_approval": true,
+      "approval_label": "Client signs the BOQ",
+      "client_ask": "Sign the BOQ",
+      "tasks": [
+        {
+          "title": "BOQ prepared",
+          "who": "designer",
+          "day": 2,
+          "required": true
+        },
+        {
+          "title": "Internal cost and margin check",
+          "who": "senior",
+          "day": 3,
+          "required": true
+        },
+        {
+          "title": "BOQ shared and explained to the client",
+          "who": "designer",
+          "day": 4,
+          "required": true
+        },
+        {
+          "title": "Advance payment received",
+          "who": "senior",
+          "day": 4,
+          "required": true
+        }
+      ]
+    },
+    {
+      "key": "procurement",
+      "name": "Procurement and production",
+      "days": 20,
+      "client_approval": false,
+      "approval_label": null,
+      "client_ask": null,
+      "tasks": [
+        {
+          "title": "Production drawings issued",
+          "who": "designer",
+          "day": 3,
+          "required": true
+        },
+        {
+          "title": "Purchase orders raised",
+          "who": "senior",
+          "day": 5,
+          "required": true
+        },
+        {
+          "title": "Material delivery schedule set",
+          "who": "designer",
+          "day": 7,
+          "required": true
+        },
+        {
+          "title": "Factory quality check",
+          "who": "senior",
+          "day": 18,
+          "required": true
+        }
+      ]
+    },
+    {
+      "key": "site",
+      "name": "Site execution",
+      "days": 30,
+      "client_approval": false,
+      "approval_label": null,
+      "client_ask": null,
+      "tasks": [
+        {
+          "title": "Site handed to the supervisor with drawings",
+          "who": "designer",
+          "day": 1,
+          "required": true
+        },
+        {
+          "title": "Weekly site photos to the client",
+          "who": "designer",
+          "day": 7,
+          "required": false
+        },
+        {
+          "title": "Mid-project site review",
+          "who": "senior",
+          "day": 15,
+          "required": true
+        },
+        {
+          "title": "Final quality check by the senior designer",
+          "who": "senior",
+          "day": 28,
+          "required": true
+        }
+      ]
+    },
+    {
+      "key": "handover",
+      "name": "Handover",
+      "days": 5,
+      "client_approval": true,
+      "approval_label": "Client signs the handover",
+      "client_ask": "Sign the handover",
+      "tasks": [
+        {
+          "title": "Snag list closed",
+          "who": "designer",
+          "day": 2,
+          "required": true
+        },
+        {
+          "title": "Deep cleaning done",
+          "who": "designer",
+          "day": 3,
+          "required": true
+        },
+        {
+          "title": "Handover walk-through with the client",
+          "who": "designer",
+          "day": 4,
+          "required": true
+        },
+        {
+          "title": "Final payment received",
+          "who": "senior",
+          "day": 4,
+          "required": true
+        },
+        {
+          "title": "Warranty and care guide shared",
+          "who": "designer",
+          "day": 4,
+          "required": true
+        }
+      ]
+    }
+  ]
+}

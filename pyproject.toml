@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "interior-project-plan"
+version = "0.1.0"
+description = "Stage templates and dated plans for interior projects, plus repeating tasks (Mon-Sat working days) and task dependencies with loop checks."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [{ name = "Hexaspace" }]
+keywords = ["project management", "interior design", "construction", "schedule", "tasks", "recurring", "dependencies", "india"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Intended Audience :: Developers",
+  "Topic :: Office/Business :: Financial :: Accounting",
+  "Operating System :: OS Independent",
+]
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/interior_project_plan"]
