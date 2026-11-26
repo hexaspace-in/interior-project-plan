@@ -2,13 +2,35 @@ from datetime import date
 
 import pytest
 
-from interior_project_plan import (DependencyError, RuleError, check_can_start, check_deps, check_rule,
-                                   client_approvals, default_template, describe, next_due, plan_project)
+from interior_project_plan import (DependencyError, RuleError, available_templates, check_can_start, check_deps,
+                                   check_rule, client_approvals, default_template, describe, load_template, next_due,
+                                   plan_project)
 
 
 def test_template():
     t = default_template()
     assert [s["key"] for s in t["stages"]] == ["brief", "concept", "design", "boq", "procurement", "site", "handover"]
+
+
+def test_load_template():
+    assert load_template("default") == default_template()
+    assert {"default", "kitchen"} <= set(available_templates())
+    for bad in ["office_fitout", "../plan", "Kitchen", ""]:
+        with pytest.raises(ValueError):
+            load_template(bad)
+
+
+def test_kitchen_template():
+    t = load_template("kitchen")
+    assert [s["key"] for s in t["stages"]] == ["measurement", "design", "quote", "production", "installation",
+                                               "handover"]
+    for s in t["stages"]:
+        assert all(0 <= task["day"] < s["days"] and task["who"] in t["roles"] for task in s["tasks"])
+    weeks = sum(s["days"] for s in t["stages"]) / 6                          # Mon-Sat working weeks
+    assert 4 <= weeks <= 6
+    p = plan_project(date(2026, 12, 1), template=t)
+    assert p["end"] == "2027-01-08"                                 # 34 working days, about 5.7 weeks
+    assert [a["stage"] for a in client_approvals(p)] == ["design", "quote", "handover"]
 
 
 def test_plan_dates_skip_sunday():
