@@ -1,0 +1,229 @@
+{
+  "name": "Modular kitchen only",
+  "project_types": {
+    "apartment": "Apartment",
+    "villa": "Villa / bungalow"
+  },
+  "roles": {
+    "designer": "Designer",
+    "senior": "Senior designer / project lead"
+  },
+  "stages": [
+    {
+      "key": "measurement",
+      "name": "Measurement",
+      "days": 3,
+      "client_approval": false,
+      "approval_label": null,
+      "client_ask": null,
+      "tasks": [
+        {
+          "title": "Kick-off call with the client",
+          "who": "designer",
+          "day": 0,
+          "required": true
+        },
+        {
+          "title": "Site visit and kitchen measurement",
+          "who": "designer",
+          "day": 1,
+          "required": true
+        },
+        {
+          "title": "Plumbing, gas and electrical points marked",
+          "who": "designer",
+          "day": 1,
+          "required": true
+        },
+        {
+          "title": "Appliance list and budget range confirmed",
+          "who": "senior",
+          "day": 2,
+          "required": true
+        }
+      ]
+    },
+    {
+      "key": "design",
+      "name": "Design and 3D",
+      "days": 6,
+      "client_approval": true,
+      "approval_label": "Client approves the kitchen design",
+      "client_ask": "Approve the kitchen design",
+      "tasks": [
+        {
+          "title": "Kitchen layout (2D)",
+          "who": "designer",
+          "day": 1,
+          "required": true
+        },
+        {
+          "title": "3D views of the kitchen",
+          "who": "designer",
+          "day": 3,
+          "required": true
+        },
+        {
+          "title": "Carcass, shutter, countertop and hardware selected",
+          "who": "designer",
+          "day": 4,
+          "required": true
+        },
+        {
+          "title": "Senior check of drawings",
+          "who": "senior",
+          "day": 4,
+          "required": true
+        },
+        {
+          "title": "Design presentation to the client",
+          "who": "designer",
+          "day": 5,
+          "required": true
+        }
+      ]
+    },
+    {
+      "key": "quote",
+      "name": "Quote sign-off",
+      "days": 3,
+      "client_approval": true,
+      "approval_label": "Client signs the quote",
+      "client_ask": "Sign the quote",
+      "tasks": [
+        {
+          "title": "Quote prepared",
+          "who": "designer",
+          "day": 0,
+          "required": true
+        },
+        {
+          "title": "Internal cost and margin check",
+          "who": "senior",
+          "day": 1,
+          "required": true
+        },
+        {
+          "title": "Quote shared and explained to the client",
+          "who": "designer",
+          "day": 2,
+          "required": true
+        },
+        {
+          "title": "Advance payment received",
+          "who": "senior",
+          "day": 2,
+          "required": true
+        }
+      ]
+    },
+    {
+      "key": "production",
+      "name": "Production",
+      "days": 15,
+      "client_approval": false,
+      "approval_label": null,
+      "client_ask": null,
+      "tasks": [
+        {
+          "title": "Site re-measured before production",
+          "who": "designer",
+          "day": 0,
+          "required": true
+        },
+        {
+          "title": "Production drawings issued to the factory",
+          "who": "designer",
+          "day": 1,
+          "required": true
+        },
+        {
+          "title": "Countertop and appliances ordered",
+          "who": "senior",
+          "day": 2,
+          "required": true
+        },
+        {
+          "title": "Factory quality check",
+          "who": "senior",
+          "day": 13,
+          "required": true
+        },
+        {
+          "title": "Delivery to site scheduled",
+          "who": "designer",
+          "day": 14,
+          "required": true
+        }
+      ]
+    },
+    {
+      "key": "installation",
+      "name": "Installation",
+      "days": 5,
+      "client_approval": false,
+      "approval_label": null,
+      "client_ask": null,
+      "tasks": [
+        {
+          "title": "Cabinets installed and levelled",
+          "who": "designer",
+          "day": 1,
+          "required": true
+        },
+        {
+          "title": "Countertop fixed",
+          "who": "designer",
+          "day": 2,
+          "required": true
+        },
+        {
+          "title": "Sink, hob, chimney and appliances fitted",
+          "who": "designer",
+          "day": 3,
+          "required": true
+        },
+        {
+          "title": "Final quality check by the senior designer",
+          "who": "senior",
+          "day": 4,
+          "required": true
+        }
+      ]
+    },
+    {
+      "key": "handover",
+      "name": "Handover",
+      "days": 2,
+      "client_approval": true,
+      "approval_label": "Client signs the handover",
+      "client_ask": "Sign the handover",
+      "tasks": [
+        {
+          "title": "Snag list closed and kitchen cleaned",
+          "who": "designer",
+          "day": 0,
+          "required": true
+        },
+        {
+          "title": "Handover walk-through with the client",
+          "who": "designer",
+          "day": 1,
+          "required": true
+        },
+        {
+          "title": "Final payment received",
+          "who": "senior",
+          "day": 1,
+          "required": true
+        },
+        {
+          "title": "Warranty and care guide shared",
+          "who": "designer",
+          "day": 1,
+          "required": true
+        }
+      ]
+    }
+  ]
+}
