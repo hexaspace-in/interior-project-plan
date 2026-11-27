@@ -1,13 +1,30 @@
 """Turn a stage template into dated stages and tasks."""
 import json
+import re
 from datetime import date, timedelta
 from importlib import resources
 from typing import Optional
 
 
+def available_templates() -> list:
+    """Names of the bundled templates, e.g. ["default", "kitchen"]."""
+    return sorted(f.name[:-len("_template.json")] for f in resources.files(__package__).iterdir()
+                  if f.name.endswith("_template.json"))
+
+
+def load_template(name: str) -> dict:
+    """Load a bundled template by name, e.g. "default" or "kitchen" (reads <name>_template.json)."""
+    if not isinstance(name, str) or not re.fullmatch(r"[a-z0-9_]+", name):
+        raise ValueError(f"Bad template name {name!r}; use one of {available_templates()}")
+    f = resources.files(__package__).joinpath(f"{name}_template.json")
+    if not f.is_file():
+        raise ValueError(f"No template named {name!r}; use one of {available_templates()}")
+    return json.loads(f.read_text(encoding="utf-8"))
+
+
 def default_template() -> dict:
     """The 7-stage template for Indian home interiors: brief, concept, design, BOQ, procurement, site, handover."""
-    return json.loads(resources.files(__package__).joinpath("default_template.json").read_text(encoding="utf-8"))
+    return load_template("default")
 
 
 def _add_days(d: date, n: int, skip_sunday: bool) -> date:
